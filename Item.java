@@ -1,3 +1,5 @@
+import java.util.ArrayList;
+
 class Item {
 	int id;
 	String name;
@@ -58,3 +60,33 @@ class Item {
 		return danok*0.15;
 	}
 }
+
+class Recepit{
+	List<Item> recepit;
+
+	public Recepit() {
+		this.recepit = new ArrayList<>();
+	}
+
+	public void addItem(Item a){
+		recepit.add(a);
+	}
+
+	public void removeItem(Item a){
+		recepit.remove(a);
+	}
+
+	public void amount(){
+		return recepit.stream().
+	}
+
+	public double amount(){
+		return recepit.stream().mapToDouble(Item::getPrice).sum();
+	}
+
+	public double taxBack(){
+		return recepit.stream().mapToDouble(Item::taxReturn).sum();
+	}
+}
+
+
